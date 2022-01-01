@@ -4,20 +4,13 @@ branch: master
 media_folder: static/img
 public_folder: /img
 
-
 collections:
-- title: "blog"
+  - title: "blog"
 label: "Blog"
 folder: "src/blog"
 create: true
 slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
 fields:
-- label: "Title"
+  - label: "Title"
 title: "title"
 widget: "string"
-- label: "Publish Date"
-title: "date"
-widget: "datetime"
-- label: "Body"
-title: "body"
-widget: "markdown"
