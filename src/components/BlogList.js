@@ -8,6 +8,9 @@ const BlogList = () => {
       allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
           node {
+            fields {
+              slug
+            }
             excerpt
             frontmatter {
               title
@@ -24,6 +27,7 @@ const BlogList = () => {
         {data.allMarkdownRemark.edges.map(edge => (
           <BlogPost
             key={edge.node.id}
+            slug={edge.node.fields.slug}
             title={edge.node.frontmatter.title}
             date={edge.node.frontmatter.date}
             excerpt={edge.node.excerpt}
